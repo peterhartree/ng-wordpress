@@ -32,19 +32,20 @@ angular.module( 'ngWordPressApp')
     },
     getBodyClass : function() {
       var bodyClass = '';
-      if(this.template) {
-        bodyClass += ' template-' + this.template;
+      if(this.cache.template) {
+        bodyClass += ' template-' + this.cache.template;
       }
-      if(this.postType) {
-        bodyClass += ' type-' + this.postType;
+      if(this.cache.postType) {
+        bodyClass += ' type-' + this.cache.postType;
       }
-      if(this.slug) {
-        bodyClass += ' slug-' + this.slug;
+      if(this.cache.slug) {
+        bodyClass += ' slug-' + this.cache.slug;
       }
 
       bodyClass = bodyClass.trim();
       bodyClass = bodyClass.toLowerCase();
       bodyClass = bodyClass.replace('ctrl', '');
+
       return bodyClass;
     },
     setController : function() {
