@@ -19,7 +19,7 @@ angular.module( 'ngWordPressApp')
 
       $http({
         method: 'GET',
-        url: Settings.ngwp.baseUrl + Settings.ngwp.wpApiBasePath + '/' + postType,
+        url: Settings.ngwp.env.baseUrl + Settings.ngwp.wpApiBasePath + '/' + postType,
         params: params,
         cache: true
       })
@@ -35,7 +35,7 @@ angular.module( 'ngWordPressApp')
 
       $http({
         method: 'GET',
-        url: Settings.ngwp.baseUrl + Settings.ngwp.wpApiBasePath + '/' + postType,
+        url: Settings.ngwp.env.baseUrl + Settings.ngwp.wpApiBasePath + '/' + postType,
         params: { 'filter[name]' : slug },
         cache: true
       })
@@ -50,7 +50,7 @@ angular.module( 'ngWordPressApp')
 
       $http({
         method: 'GET',
-        url: Settings.ngwp.baseUrl + Settings.ngwp.customApiBasePath + '/options',
+        url: Settings.ngwp.env.baseUrl + Settings.ngwp.customApiBasePath + '/options',
         cache: true
       })
       .success(function(data) {
