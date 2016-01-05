@@ -1,0 +1,3 @@
+grunt build;
+cd dist;
+python -m SimpleHTTPServer;

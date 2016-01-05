@@ -2,35 +2,24 @@
 
 /**
  * @ngdoc overview
- * @name wpJsBpApp
+ * @name ngWordPressApp
  * @description
- * # wpJsBpApp
+ * # ngWordPressApp
  *
  * Main module of the application.
  */
 angular
-  .module('wpJsBpApp', [
+  .module('ngWordPressApp', [
     'ngAnimate',
-    'ngCookies',
-    'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'wp.api'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    'viewhead',
+    'angular-loading-bar',
+    'ngWordPressApp.components.archives',
+    'ngWordPressApp.components.contentExcerpt',
+    'ngWordPressApp.components.contentSingle',
+    'ngWordPressApp.components.latestPosts',
+    'ngWordPressApp.components.navigationList',
+    'ngWordPressApp.components.primaryNavigation',
+  ]);

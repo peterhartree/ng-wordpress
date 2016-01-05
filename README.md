@@ -1,11 +1,22 @@
-# wp-js-bp
+# ng-wordpress
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.14.0.
+An Angular application skeleton for building dynamic websites on top of the [WordPress API v2](http://wp-api.org).
 
-## Build & development
+Pre-alpha! Use at your own risk.
 
-Run `grunt` for building and `grunt serve` for preview.
+## Get started
+
+`npm install`
+
+`bower install`
+
+## Development
+
+Run `sh dev`.
+
+## Build
+
+Run `sh build`
 
 ## Testing
 

@@ -1,6 +1,10 @@
 // Generated on 2015-12-12 using generator-angular 0.14.0
 'use strict';
 
+var modRewrite = require('connect-modrewrite')([
+    '!\\.ttf|\\.woff|\\.ttf|\\.eot|\\.html|\\.js|\\.coffee|\\.css|\\.png|\\.jpg|\\.gif|\\.svg$ /index.html [L]'
+  ]);
+
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -80,6 +84,7 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
+              modRewrite,
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -202,6 +207,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
+        exclude: ['bower_components/jquery', 'bower_components/bootstrap-sass-official/assets/javascripts'], // Let's not use Bootstrap JS
         ignorePath:  /\.\.\//
       },
       test: {
@@ -224,7 +230,7 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
@@ -371,7 +377,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'wpJsBpApp',
+          module: 'ngWordPressApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },

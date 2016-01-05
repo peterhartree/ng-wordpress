@@ -1,0 +1,15 @@
+<view-title>{{post.ngwp.meta_title}}</view-title>
+<meta view-head property="og:title" content="{{::post.ngwp.meta_title}}">
+<meta view-head name="twitter:title" content="{{::post.ngwp.meta_title}}">
+<meta view-head name="description" property="og:description" content="{{::post.ngwp.meta_desc}}">
+<meta view-head name="twitter:description" content="{{::post.ngwp.meta_desc}}">
+<meta view-head property="og:image" content="{{::post.ngwp.social_image}}">
+<meta view-head property="og:type" content="article">
+<meta view-head property="og:url" content="{{::Settings.ngwp.hostname}}{{::post.ngwp.cannonical_path}}">
+<link view-head rel="canonical" href="{{::Settings.ngwp.hostname}}{{::post.ngwp.cannonical_path}}">
+
+<meta view-head property="article:published_time" content="{{::post.date_gmt}}">
+<meta view-head property="article:modified_time" content="{{::post.modified_gmt}}">
+<meta view-head property="og:updated_time" content="{{::post.modified_gmt}}">
+
+<content-single></content-single>

@@ -1,0 +1,31 @@
+# Change YOUR_TOKEN to your prerender token and uncomment that line if you want to cache urls and view crawl stats
+# Change example.com to your website url
+# C.f. https://prerender.io/documentation/install-middleware#apache
+
+<IfModule mod_headers.c>
+    #RequestHeader set X-Prerender-Token "YOUR_TOKEN"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force remove "www"
+    RewriteCond %{HTTP_HOST} ^www.example.com$ [NC]
+    RewriteRule ^(.*)$ https://example.com/$1 [R=301,L]
+
+    # Compatibility with Yoast SEO sitemaps
+    RewriteRule ^sitemap(-+([a-zA-Z0-9_-]+))?\.xml(\.gz)?$ /wordpress/sitemap$1.xml$2 [L]
+
+    <IfModule mod_proxy_http.c>
+        RewriteCond %{HTTP_USER_AGENT} baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator [NC,OR]
+        RewriteCond %{QUERY_STRING} _escaped_fragment_
+
+        # Only proxy the request to Prerender if it's a request for HTML
+        RewriteRule ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff))(.*) http://service.prerender.io/http://example.com/$2 [P,L]
+    </IfModule>
+
+    # Redirect requests to Angular app.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) index.html [L]
+</IfModule
