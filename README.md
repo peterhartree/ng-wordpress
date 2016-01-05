@@ -12,7 +12,7 @@ Until the REST API makes it into core, you'll need the latest stable version of 
 
 ### Installation
 
-`git clone https://github.com/peterhartree/ng-wordpress.git .`
+`git clone https://github.com/peterhartree/ng-wordpress.git . -o upstream`
 
 `npm install`
 
@@ -41,3 +41,7 @@ Run `sh build`
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+## Get updates
+
+`git pull upstream master`
