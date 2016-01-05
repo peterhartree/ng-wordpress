@@ -41,7 +41,7 @@ angular.module('ngWordPressApp')
       else {
         console.error('Did not recognise environment. Check environment settings in app/scripts/settings.js.');
       }
-    }
+    };
 
     return EnvironmentFactory;
   })
