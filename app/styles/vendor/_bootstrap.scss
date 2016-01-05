@@ -11,7 +11,7 @@
 // Reset and dependencies
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/normalize";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/print";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap/glyphicons";
+//@import "bootstrap-sass-official/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding";
@@ -23,8 +23,8 @@
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
 
 // Components
-//@import "bootstrap-sass-official/assets/stylesheets/bootstrap/component-animations";
-//@import "bootstrap-sass-official/assets/stylesheets/bootstrap/dropdowns";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/component-animations";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/dropdowns";
 //@import "bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups";
 //@import "bootstrap-sass-official/assets/stylesheets/bootstrap/input-groups";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/navs";
