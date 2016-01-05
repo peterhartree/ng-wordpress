@@ -91,11 +91,9 @@ angular.module('ngWordPressApp')
 
     $rootScope.$on('cfpLoadingBar:loading', function() {
       $rootScope.loaded = false;
-      console.log('loading start');
     });
 
     $rootScope.$on('cfpLoadingBar:completed', function() {
       $rootScope.loaded = true;
-      console.log('loading complete');
     });
   }]);
