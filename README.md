@@ -12,7 +12,7 @@ Until the REST API makes it into core, you'll need the latest stable version of 
 
 ### Installation
 
-`git clone . https://github.com/peterhartree/ng-wordpress.git`
+`git clone https://github.com/peterhartree/ng-wordpress.git .`
 
 `npm install`
 
@@ -20,7 +20,7 @@ Until the REST API makes it into core, you'll need the latest stable version of 
 
 You'll also want the companion WordPress plugin. From your WordPress plugin directory, run:
 
-`git clone ngwp https://github.com/peterhartree/ng-wordpress-plugin.git`
+`git clone https://github.com/peterhartree/ng-wordpress-plugin.git ngwp`
 
 Then activate the plugin via the WordPress dashboard.
 
