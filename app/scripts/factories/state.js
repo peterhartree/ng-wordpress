@@ -54,8 +54,16 @@ angular.module( 'ngWordPressApp')
     setSlug : function() {
       var slugPromise = $q.defer();
 
+      var path = $location.path();
+      var pathComponents = path.split('/');
+
       if($routeParams.slug) {
         this.set('slug', $routeParams.slug);
+        slugPromise.resolve();
+      }
+      else if (this.cache.controller === 'PageCtrl' && pathComponents.length === 3) {
+        // We're viewing a page with a custom template
+        this.set('slug', pathComponents[1]);
         slugPromise.resolve();
       }
       else if (this.cache.controller === 'PageCtrl') {
@@ -80,7 +88,7 @@ angular.module( 'ngWordPressApp')
 
         // We've got a page number
         this.set('page', parseInt(pathComponents[2]));
-console.log('set page to');
+
         console.log(this.cache.page);
       }
       else if (this.cache.controller === 'ArchiveCtrl') {
