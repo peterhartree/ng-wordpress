@@ -17,6 +17,7 @@ angular
     'viewhead',
     'angular-loading-bar',
     'ngWordPressApp.components.archives',
+    'ngWordPressApp.components.archiveNavigation',
     'ngWordPressApp.components.contentExcerpt',
     'ngWordPressApp.components.contentSingle',
     'ngWordPressApp.components.latestPosts',

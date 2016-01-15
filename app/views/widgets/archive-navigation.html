@@ -1,0 +1,17 @@
+<ul class="nav nav-archive">
+  <li ng-repeat="year in archive track by $index">
+    {{::year.year}}
+    <ul>
+      <li ng-repeat="month in year.months track by $index">
+        <a ng-click="month.show = !month.show">{{::month.name}}</a>
+
+        <ul ng-show="month.show">
+          <li ng-repeat="post in month.posts track by $index" ng-class="{active : isActive(post.link)}">
+            <a ng-href="{{::post.link}}">{{::post.post_title}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+

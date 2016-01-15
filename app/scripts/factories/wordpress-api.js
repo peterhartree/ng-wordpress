@@ -58,7 +58,52 @@ angular.module( 'ngWordPressApp')
       });
 
       return options.promise;
+    },
+    getArchive: function(postType, options) {
+      var archive = $q.defer();
+      var params = {};
+      params.postType = postType;
+
+      if(typeof options !== 'undefined') {
+        angular.forEach(filters, function(filter, key) {
+          params[key] = filter;
+        });
+      }
+
+      $http({
+        method: 'GET',
+        url: Settings.ngwp.env.baseUrl + Settings.ngwp.customApiBasePath + '/archive',
+        params: params,
+        cache: true
+      })
+      .success(function(data) {
+        archive.resolve(data);
+      });
+
+      return archive.promise;
+    },
+
+    query: function(method, params) {
+      var queryResult = $q.defer();
+      var basePath = null;
+
+      if(!params.basePath) {
+        console.error('params.basePath is required by WordPressApi.query()');
+      }
+
+      $http({
+        method: 'GET',
+        url: Settings.ngwp.env.baseUrl + params.basePath + '/' + method,
+        params: params,
+        cache: true
+      })
+      .success(function(data) {
+        queryResult.resolve(data);
+      });
+
+      return queryResult.promise;
     }
+
   };
 
 });
