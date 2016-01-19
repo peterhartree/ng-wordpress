@@ -16,6 +16,7 @@ angular
     'ngTouch',
     'viewhead',
     'angular-loading-bar',
+    'angular-bind-html-compile',
     'ngWordPressApp.components.archives',
     'ngWordPressApp.components.archiveNavigation',
     'ngWordPressApp.components.contentExcerpt',
