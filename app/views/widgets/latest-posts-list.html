@@ -1,4 +1,4 @@
-<ul class="nav navbar-nav">
+<ul class="nav nav-latest-posts-list">
   <li ng-repeat="post in latestPostsList track by post.id" ng-class="{active : isActive(post.link)}">
     <a ng-href="{{::post.ngwp.url}}" ng-bind-html="::post.title.rendered"></a>
   </li>
