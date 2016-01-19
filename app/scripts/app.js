@@ -21,6 +21,7 @@ angular
     'ngWordPressApp.components.contentExcerpt',
     'ngWordPressApp.components.contentSingle',
     'ngWordPressApp.components.latestPosts',
+    'ngWordPressApp.components.latestPostsList',
     'ngWordPressApp.components.navigationList',
     'ngWordPressApp.components.primaryNavigation',
   ]);
