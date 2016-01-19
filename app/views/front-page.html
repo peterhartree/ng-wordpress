@@ -11,18 +11,21 @@
 <meta view-head property="article:modified_time" content="{{::post.modified_gmt}}">
 <meta view-head property="og:updated_time" content="{{::post.modified_gmt}}">
 
+<div class="fade-inner" ng-class="{ 'ready' : ready && loaded }">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <content-single></content-single>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <content-single></content-single>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-4">
-    <latest-posts-list></latest-posts-list>
-  </div>
-  <div class="col-sm-8">
-    <latest-posts></latest-posts>
+    <div class="row">
+      <div class="col-sm-4">
+        <latest-posts-list></latest-posts-list>
+      </div>
+      <div class="col-sm-8">
+        <latest-posts></latest-posts>
+      </div>
+    </div>
   </div>
 </div>

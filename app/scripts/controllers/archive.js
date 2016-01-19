@@ -30,6 +30,8 @@ angular.module('ngWordPressApp')
         });
 
         $scope.posts = posts;
+
+        $scope.ready = true;
       });
     });
   });

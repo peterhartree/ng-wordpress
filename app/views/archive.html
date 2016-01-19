@@ -1,11 +1,16 @@
-<h2 view-title>Archive</h2>
+<div class="fade-inner" ng-class="{ 'ready' : ready && loaded }">
 
-<div class="row" ng-repeat="post in posts track by $index">
-  <div class="col-sm-8">
-    <content-single></content-single>
-  </div>
-  <div class="col-sm-4">
-    <h3>Archive navigation</h3>
-    <archive-navigation></archive-navigation>
+  <div class="container">
+    <h2 view-title>Archive</h2>
+
+    <div class="row" ng-repeat="post in posts track by $index">
+      <div class="col-sm-8">
+        <content-single></content-single>
+      </div>
+      <div class="col-sm-4">
+        <h3>Archive navigation</h3>
+        <archive-navigation></archive-navigation>
+      </div>
+    </div>
   </div>
 </div>

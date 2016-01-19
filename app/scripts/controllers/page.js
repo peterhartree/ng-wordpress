@@ -10,6 +10,7 @@
 angular.module('ngWordPressApp')
   .controller('PageCtrl', function (WordPressApi, $scope, $sce, $location, State) {
 
+    $scope.ready = false;
     var currentState = State.get();
 
     currentState.then(function(currentState) {
@@ -24,6 +25,9 @@ angular.module('ngWordPressApp')
 
         posts[0].content.rendered = $sce.trustAsHtml(posts[0].content.rendered);
         $scope.post = posts[0];
+
+        console.log('ready');
+        $scope.ready = true;
       });
     });
 

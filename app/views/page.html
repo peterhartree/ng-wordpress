@@ -12,4 +12,8 @@
 <meta view-head property="article:modified_time" content="{{::post.modified_gmt}}">
 <meta view-head property="og:updated_time" content="{{::post.modified_gmt}}">
 
-<content-single></content-single>
+<div class="fade-inner" ng-class="{ 'ready' : ready && loaded }">
+  <div class="container">
+    <content-single></content-single>
+  </div>
+</div>
