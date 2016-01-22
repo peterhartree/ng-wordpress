@@ -22,7 +22,7 @@ angular.module('ngWordPressApp.components.archiveNextPreviousPage', [])
 
       archiveMeta.then(function(archiveMeta) {
         totalPosts = archiveMeta.published_posts;
-        totalPages = Math.round(totalPosts / postsPerPage);
+        totalPages = Math.ceil(totalPosts / postsPerPage);
 
         state.then(function(state) {
           currentPage = state.page;
