@@ -26,7 +26,6 @@ angular.module('ngWordPressApp')
         posts[0].content.rendered = $sce.trustAsHtml(posts[0].content.rendered);
         $scope.post = posts[0];
 
-        console.log('ready');
         $scope.ready = true;
       });
     });
