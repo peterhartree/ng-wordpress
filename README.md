@@ -24,7 +24,7 @@ You'll also want the companion WordPress plugin. From your WordPress plugin dire
 
 Then activate the plugin via the WordPress dashboard.
 
-To learn about what this plugin does, see [here](https://github.com/peterhartree/ng-wordpress-plugin).
+To learn what this plugin does, see [here](https://github.com/peterhartree/ng-wordpress-plugin).
 
 ### Configuration
 
