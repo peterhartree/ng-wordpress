@@ -59,10 +59,11 @@ angular.module( 'ngWordPressApp')
 
       return options.promise;
     },
-    getArchive: function(postType, options) {
-      var archive = $q.defer();
+    getArchiveMeta: function(postType, options) {
+      var archiveMeta = $q.defer();
       var params = {};
       params.postType = postType;
+      params.basePath = Settings.ngwp.customApiBasePath;
 
       if(typeof options !== 'undefined') {
         angular.forEach(filters, function(filter, key) {
@@ -70,30 +71,35 @@ angular.module( 'ngWordPressApp')
         });
       }
 
-      $http({
-        method: 'GET',
-        url: Settings.ngwp.env.baseUrl + Settings.ngwp.customApiBasePath + '/archive',
-        params: params,
-        cache: true
-      })
-      .success(function(data) {
-        archive.resolve(data);
-      });
+      return this.query('archive-meta', params);
+    },
+    getArchive: function(postType, options) {
+      var archive = $q.defer();
+      var params = {};
+      params.postType = postType;
+      params.basePath = Settings.ngwp.customApiBasePath;
 
-      return archive.promise;
+      if(typeof options !== 'undefined') {
+        angular.forEach(filters, function(filter, key) {
+          params[key] = filter;
+        });
+      }
+
+      return this.query('archive', params);
     },
 
     query: function(method, params) {
       var queryResult = $q.defer();
-      var basePath = null;
+      var basePath = params.basePath;
+      delete params['basePath'];
 
-      if(!params.basePath) {
+      if(!basePath) {
         console.error('params.basePath is required by WordPressApi.query()');
       }
 
       $http({
         method: 'GET',
-        url: Settings.ngwp.env.baseUrl + params.basePath + '/' + method,
+        url: Settings.ngwp.env.baseUrl + basePath + '/' + method,
         params: params,
         cache: true
       })

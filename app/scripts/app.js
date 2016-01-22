@@ -19,6 +19,7 @@ angular
     'angular-bind-html-compile',
     'ngWordPressApp.components.archives',
     'ngWordPressApp.components.archiveNavigation',
+    'ngWordPressApp.components.archiveNextPreviousPage',
     'ngWordPressApp.components.contentExcerpt',
     'ngWordPressApp.components.contentSingle',
     'ngWordPressApp.components.latestPosts',
