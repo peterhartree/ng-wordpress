@@ -8,7 +8,7 @@ An Angular application skeleton for building dynamic websites on top of the [Wor
 
 ### Prerequisites
 
-Until the REST API makes it into core, you'll need the latest stable version of the [WordPress REST API v2 plugin](https://en-gb.wordpress.org/plugins/rest-api/).
+- Until the REST API makes it into core, you'll need the latest stable version of the [WordPress REST API v2 plugin](https://en-gb.wordpress.org/plugins/rest-api/).
 
 ### Installation
 
@@ -44,4 +44,4 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Get updates
 
-`git pull upstream master`
+Run `sh update`
