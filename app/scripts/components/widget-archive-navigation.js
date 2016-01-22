@@ -9,8 +9,6 @@ angular.module('ngWordPressApp.components.archiveNavigation', [])
     link: function(scope) {
       var archive = WordPressApi.getArchive('post');
       archive.then(function(archive) {
-        console.log('archive found');
-        console.log(archive);
         scope.archive = archive;
       });
     }
