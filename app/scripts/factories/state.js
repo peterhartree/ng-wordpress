@@ -88,8 +88,6 @@ angular.module( 'ngWordPressApp')
 
         // We've got a page number
         this.set('page', parseInt(pathComponents[2]));
-
-        console.log(this.cache.page);
       }
       else if (this.cache.controller === 'ArchiveCtrl') {
         this.set('page', 1);
