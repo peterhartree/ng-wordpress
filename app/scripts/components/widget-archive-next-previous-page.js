@@ -45,11 +45,11 @@ angular.module('ngWordPressApp.components.archiveNextPreviousPage', [])
             scope.nextPageLink = '/' + postType + 's/';
           }
           else if(nextPageNumber !== null) {
-            scope.nextPageLink = '/' + postType + 's/' + nextPageNumber + '/';
+            scope.nextPageLink = '/' + postType + 's/page/' + nextPageNumber + '/';
           }
 
           if(previousPageNumber !== null) {
-            scope.previousPageLink = '/' + postType + 's/' + previousPageNumber + '/';
+            scope.previousPageLink = '/' + postType + 's/page/' + previousPageNumber + '/';
           }
         });
       });

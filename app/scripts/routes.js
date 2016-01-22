@@ -23,7 +23,7 @@ angular.module('ngWordPressApp')
 
       // Pagination
       $routeProvider
-        .when('/' + postType + 's/:page/', {
+        .when('/' + postType + 's/page/:page/', {
           templateUrl: 'views/archive.html',
           controller: 'ArchiveCtrl',
           controllerAs: 'main'

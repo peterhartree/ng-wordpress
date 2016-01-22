@@ -84,10 +84,10 @@ angular.module( 'ngWordPressApp')
       var path = $location.path();
       var pathComponents = path.split('/');
 
-      if(pathComponents.length === 4 && this.cache.controller === 'ArchiveCtrl') {
+      if(pathComponents.length === 5 && this.cache.controller === 'ArchiveCtrl') {
 
         // We've got a page number
-        this.set('page', parseInt(pathComponents[2]));
+        this.set('page', parseInt(pathComponents[3]));
       }
       else if (this.cache.controller === 'ArchiveCtrl') {
         this.set('page', 1);
