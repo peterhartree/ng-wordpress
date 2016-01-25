@@ -76,9 +76,11 @@ angular.module('ngWordPressApp')
         redirect: '/404/',
       });
   })
-  .run(['$rootScope','$location', '$routeParams', 'State', '$route', 'WordPressOptions', function($rootScope, $location, $routeParams, State, $route, WordPressOptions) {
+  .run(function($rootScope, $location, $routeParams, State, Settings, $route, WordPressOptions) {
 
     $rootScope.loaded = false;
+
+    $rootScope.viewTitle = Settings.ngwp.siteTitle;
 
     WordPressOptions.then(function(WordPressOptions) {
       $rootScope.WordPressOptions = WordPressOptions;
@@ -96,4 +98,4 @@ angular.module('ngWordPressApp')
     $rootScope.$on('cfpLoadingBar:completed', function() {
       $rootScope.loaded = true;
     });
-  }]);
+  });

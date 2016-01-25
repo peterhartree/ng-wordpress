@@ -52,6 +52,7 @@ angular.module('ngWordPressApp')
     Settings.ngwp.perPage = 10;
     Settings.ngwp.wpApiBasePath = '/wp/v2';
     Settings.ngwp.customApiBasePath = '/ngwp/v1';
+    Settings.ngwp.siteTitle = 'Angular WordPress'; // We show this in the <title> while WordPress site title is loading from API
     Settings.ngwp.hostname = $location.protocol() + '://' + $location.host();
 
     return Settings;
